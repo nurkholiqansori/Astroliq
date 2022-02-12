@@ -16,18 +16,16 @@ const Text = styled.div`
   font-family: 'Fira Code', monospace;
   font-size: 0.7em;
   color: #777;
-  margin: 30px;
+  margin: 10px 30px;
 
   @media screen and (min-width: 768px) {
     & {
-      margin: 60px;
+      margin: 15px 60px;
     }
   }
 `
 
 const Loading = () => {
-  const el = React.useRef(null)
-  const contributor = `&lt;\Creator\&gt;`
 
   return (
     <>
