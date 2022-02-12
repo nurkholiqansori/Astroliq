@@ -44,7 +44,7 @@ export default function Home() {
           ASTROLIQ is a theme which build with NextJS, Styled Components, and
           GSAP
         </Hero>
-
+        <div>tets</div>
       </Body>
       <GlobalStyle />
     </div>
