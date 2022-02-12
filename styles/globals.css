@@ -20,15 +20,18 @@ a {
 }
 
 .blink {
-  animation: blinker 0.7s linear infinite;
+  animation: blinker .9s linear infinite;
 }
 
 @keyframes blinker {
-  from {
-    color: #ddd;
+  0% {
+    color: #fff;
   }
-  to {
-    color: #777;
+  50% {
+    color: #000;
+  }
+  100% {
+    color: #fff;
   }
 }
 
