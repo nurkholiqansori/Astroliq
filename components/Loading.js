@@ -26,6 +26,21 @@ const Text = styled.div`
     }
   }
 `
+const WhiteText = styled.span`
+  font-family: 'Fira Code', monospace;
+  color: #ddd;
+`
+const blink = keyframes`
+  from {
+    color: #DDD;
+  }
+  to {
+    color: #777
+  }
+`
+const Blink = styled(WhiteText)`
+  animation: ${blink} 0.7s linear infinite;
+`
 
 const Loading = () => {
   const el = React.useRef(null)
@@ -53,21 +68,5 @@ const Loading = () => {
   )
 }
 
-const WhiteText = styled.span`
-  font-family: 'Fira Code', monospace;
-  color: #ddd;
-`
-const blink = keyframes`
-  from {
-    color: #DDD;
-  }
-  to {
-    color: #777
-  }
-`
-
-const Blink = styled(WhiteText)`
-  animation: ${blink} 0.7s linear infinite;
-`
 
 export default Loading
