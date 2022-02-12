@@ -16,15 +16,11 @@ a {
 }
 
 .whiteText {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.7em;
-  color: #777;
-  margin: 30px;
   color: #ddd;
 }
 
 @media screen and (min-width: 768px) {
-    .whiteText {
+    .Typewriter__wrapper {
       margin: 100px;
     }
   }
@@ -44,4 +40,6 @@ a {
 
 .Typewriter__wrapper {
   font-family: 'Fira Code', monospace;
+  margin: 30px;
+  font-size: 0.7em;
 }
