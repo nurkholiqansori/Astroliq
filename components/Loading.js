@@ -54,8 +54,11 @@ const Loading = () => {
                 .callFunction((state) => {
                   state.elements.cursor.innerHTML = '_'
                 })
+                .typeString('Ready?')
+                .pauseFor(3000)
+                .deleteAll()
                 .typeString(
-                  '//**************************************************//<br /><br /><WhiteText>ASTROLIQ<br />Https://astroliq.vercel.app<br />Ready<Blink>_</Blink></WhiteText><br /><br />//**************************************************//<br /><br /><WhiteText>Build with<br /> - NextJS<br /> - Styled Components<br /> - GSAP<br /><br />From 12 Feb. 2022<br /><br /></WhiteText>&lt;Creator&gt; <br/><WhiteText>Nur Kholiq Ansori<br />Https://nurkholiqansori.me</WhiteText><br /> &lt;/Creator&gt;<br /><br /><WhiteText>Enter</WhiteText>',
+                  '//**************************************************//<br /><br /><span class="whiteText">ASTROLIQ<br />Https://astroliq.vercel.app<br />Build on Vercel<br />Ready<span class="whiteText blink">_</span></span><br /><br />//**************************************************//<br /><br /><span class="whiteText">Build with<br /> - NextJS<br /> - Styled Components<br /> - GSAP<br /><br />From 12 Feb. 2022<br /><br /></span>&lt;Creator&gt; <br/><span class="whiteText">Nur Kholiq Ansori<br />Https://nurkholiqansori.me</span><br /> &lt;/Creator&gt;<br /><br /><span class="whiteText">Enter</span>',
                 )
                 .start()
             }}

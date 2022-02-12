@@ -114,3 +114,30 @@
     flex-direction: column;
   }
 }
+
+.whiteText {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7em;
+  color: #777;
+  margin: 30px;
+  color: #ddd;
+}
+
+@media screen and (min-width: 768px) {
+    .whiteText {
+      margin: 100px;
+    }
+  }
+
+.blink {
+  animation: blinker 0.7s linear infinite;
+}
+
+@keyframes blinker {
+  from {
+    color: #DDD;
+  }
+  to {
+    color: #777
+  }
+}
