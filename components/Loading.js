@@ -1,7 +1,5 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import loadingContent from '../pages/api/loadingContent'
-import Typed from 'typed.js'
 import Typewriter from 'typewriter-effect'
 
 const Base = styled.div`
