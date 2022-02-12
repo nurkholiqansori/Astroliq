@@ -58,7 +58,7 @@ const Loading = () => {
                 .pauseFor(3000)
                 .deleteAll()
                 .typeString(
-                  '//**************************************************//<br /><br /><span class="whiteText">ASTROLIQ<br />Https://astroliq.vercel.app<br />Build on Vercel<br />Ready<span class="whiteText blink">_</span></span><br /><br />//**************************************************//<br /><br /><span class="whiteText">Build with<br /> - NextJS<br /> - Styled Components<br /> - GSAP<br /><br />From 12 Feb. 2022<br /><br /></span>&lt;Creator&gt; <br/><span class="whiteText">Nur Kholiq Ansori<br />Https://nurkholiqansori.me</span><br /> &lt;/Creator&gt;<br /><br /><span class="whiteText">Enter</span>',
+                  '//**************************************************//<br /><br /><span class="whiteText">ASTROLIQ<br />Https://astroliq.vercel.app<br />Build on Vercel<br />Ready<span class="whiteText blink">_</span></span><br /><br />//**************************************************//<br /><br /><span class="whiteText">Build with<br /> - NextJS<br /> - Styled Components<br /> - GSAP<br /><br />From 12 Feb. 2022<br /><br /></span> &lt;Creator&gt; <br/><span class="whiteText">Nur Kholiq Ansori<br />Https://nurkholiqansori.me</span><br /> &lt;/Creator&gt; <br /><br /><span class="whiteText">Enter</span>',
                 )
                 .start()
             }}
