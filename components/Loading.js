@@ -20,24 +20,9 @@ const Text = styled.div`
 
   @media screen and (min-width: 768px) {
     & {
-      margin: 100px;
+      margin: 60px;
     }
   }
-`
-const WhiteText = styled.span`
-  font-family: 'Fira Code', monospace;
-  color: #ddd;
-`
-const blink = keyframes`
-  from {
-    color: #DDD;
-  }
-  to {
-    color: #777
-  }
-`
-const Blink = styled(WhiteText)`
-  animation: ${blink} 0.7s linear infinite;
 `
 
 const Loading = () => {
