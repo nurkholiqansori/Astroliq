@@ -16,10 +16,11 @@ const Text = styled.div`
   font-family: 'Fira Code', monospace;
   font-size: 0.7em;
   color: #777;
-  margin: 10px 30px;
+  margin: 15px 30px;
 
   @media screen and (min-width: 768px) {
     & {
+      font-size: 0.7em;
       margin: 15px 60px;
     }
   }
