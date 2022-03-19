@@ -6,6 +6,7 @@ import Layer1 from '../components/Layer1'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Link from 'next/link'
+import Gallery from '../components/Gallery'
 
 // THEMES
 const GlobalStyle = createGlobalStyle`
@@ -31,10 +32,21 @@ const GlobalStyle = createGlobalStyle`
       background: var(--primary-text);
     }
   }
+
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .mx {
+    margin: 0 40px;
+  }
   `
 const Body = styled.div`
   background: #000;
 `
+const Container = styled.div``
 const Hero = styled.div`
   height: 100vh;
   letter-spacing: 0.5em;
@@ -64,7 +76,7 @@ const Description = styled.div`
   background-repeat: no-repeat;
 `
 const DescContent = styled.div`
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
   padding: 0 10px;
@@ -73,12 +85,12 @@ const DescContent = styled.div`
   align-items: center;
 `
 
-const Title = styled.div`
+const Title = styled.h1`
   font-family: 'Montserrat', sans-serif;
   color: transparent;
   -webkit-text-stroke: 1px var(--primary-text);
   text-stroke: 1px var(--primary-text);
-  font-size: 1.8em;
+  font-size: 2em;
 `
 
 const Footer = styled.div`
@@ -87,7 +99,8 @@ const Footer = styled.div`
   padding: 2em;
   color: var(--primary-text);
 
-  &   .copyright {
+  & .copyright {
+    font-size: 1.3em;
     text-align: center;
     color: #fff;
   }
@@ -115,7 +128,7 @@ export default function Home() {
       <Header />
       <Body>
         {/* <Loading /> */}
-        <div ref={(el) => (heroRef = el)}>
+        <Container ref={(el) => (heroRef = el)}>
           <Hero>
             <Layer1>ASTROLIQ</Layer1>
           </Hero>
@@ -125,18 +138,47 @@ export default function Home() {
               Styled Components, and GSAP
             </DescContent>
           </Description>
+          <Gallery />
           <Footer>
             <Title>Astroliq</Title>
             <div className='copyright'>
-              <i>Image from unsplash</i>
+              <i>
+                Image from{' '}
+                <Link href='https://unsplash.com/photos/CpIEyqdwygY'>
+                  <a
+                    title='black and brown starry night photo – Free Image on Unsplash'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    unsplash
+                  </a>
+                </Link>
+                , and{' '}
+                <Link href='https://www.nasa.gov/mission_pages/msl/images/index.html'>
+                  <a
+                    title='Juno Image Gallery | NASA'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    NASA
+                  </a>
+                </Link>
+              </i>
+              <br />
               <br />
               &copy;{' '}
               <Link href='https://www.nurkholiqansori.me'>
-                <a title='Personal web Nur Kholiq Ansori'>Nur Kholiq Ansori</a>
+                <a
+                  title='Personal web Nur Kholiq Ansori'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Nur Kholiq Ansori
+                </a>
               </Link>{' '}
             </div>
           </Footer>
-        </div>
+        </Container>
       </Body>
       <GlobalStyle />
     </>
