@@ -14,7 +14,7 @@ const Layer1Content = styled.div`
   pointer-events: none;
 `
 const Heading = styled.h1`
-opacity: 0,
+  opacity: 0,
   color: transparent;
   -webkit-text-stroke: 1px var(--primary-text);
   text-stroke: 1px var(--primary-text);

@@ -36,6 +36,7 @@ const Loading = () => {
       delay: 17,
       ease: 'power2.Out',
       opacity: 0,
+      display: 'none',
     })
   }, loadingRef)
 
