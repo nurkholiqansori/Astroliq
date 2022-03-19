@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Link from 'next/link'
 import Gallery from '../components/Gallery'
+import About from '../components/About'
 
 // THEMES
 const GlobalStyle = createGlobalStyle`
@@ -138,15 +139,16 @@ export default function Home() {
               Styled Components, and GSAP
             </DescContent>
           </Description>
+          <About />
           <Gallery />
           <Footer>
             <Title>Astroliq</Title>
             <div className='copyright'>
               <i>
                 Image from{' '}
-                <Link href='https://unsplash.com/photos/CpIEyqdwygY'>
+                <Link href='https://unsplash.com/'>
                   <a
-                    title='black and brown starry night photo – Free Image on Unsplash'
+                    title='Free Image on Unsplash'
                     target='_blank'
                     rel='noopener noreferrer'
                   >

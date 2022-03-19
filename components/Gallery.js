@@ -55,6 +55,7 @@ const GalleryBase = styled.div`
   padding: 10px 20px;
   color: var(--primary-text);
   display: grid;
+  gap: 30px;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 
   @media screen and (min-width: 675px) {
@@ -67,12 +68,11 @@ const GalleryBase = styled.div`
     display: flex;
     align-items: center;
   }
-  & .gallery {
-  }
 `
 const DescriptionGallery = styled.p`
-  padding: 10px 15px;
+  padding: 10px 10px;
   color: var(--primary-text);
+  text-align: justify;
 `
 const TitleH2 = styled.h2`
   font-family: 'Montserrat', sans-serif;
@@ -96,6 +96,7 @@ const List = styled.div`
   }
   & .description {
     margin: 1.2em;
+    text-align: justify;
   }
 `
 const responsive = {
@@ -139,6 +140,8 @@ const Gallery = () => {
           infinite
           autoPlay
           itemClass='carousel-item-padding-40-px mx'
+          customLeftArrow={<></>}
+          customRightArrow={<></>}
         >
           {dataGallery.map((i) => (
             <List key={i.title}>
@@ -148,6 +151,7 @@ const Gallery = () => {
             </List>
           ))}
         </Carousel>
+        <small><i>Use cursor for swipe</i></small>
       </div>
     </GalleryBase>
   )
