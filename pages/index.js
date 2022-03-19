@@ -3,8 +3,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 import Header from '../components/Header'
 import Loading from '../components/Loading'
 import Layer1 from '../components/Layer1'
-import { useState } from 'react'
-import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
   // THEMES
   const GlobalStyle = createGlobalStyle`
@@ -35,6 +35,7 @@ import gsap from 'gsap'
     background: #000;
   `
   const Hero = styled.div`
+  height: 100vh;
     letter-spacing: 0.5em;
     font-size: clamp(2em, 5vw, 6rem);
 
@@ -52,14 +53,29 @@ import gsap from 'gsap'
 
 
 export default function Home() {
+  let heroRef = useRef(null)
+
+  useEffect(() => {
+
+    gsap.from(heroRef, 3.5, {
+      delay: 18,
+      ease: 'power3.In',
+      y: 64,
+      opacity: 0,
+      stagger: {
+        amount: 1,
+      },
+    })
+  }, [heroRef])
+  
 
   // DISPLAYING
   return (
     <>
       <Header />
-      {/* <Loading /> */}
       <Body>
-        <Hero>
+      <Loading />
+        <Hero ref={el => heroRef = el}>
           <Layer1>ASTROLIQ</Layer1>
         </Hero>
         <div>tets</div>

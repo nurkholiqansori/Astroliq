@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import Typewriter from 'typewriter-effect'
+import { gsap } from 'gsap'
+
 
 const Base = styled.div`
   font-family: 'Fira Code', monospace;
@@ -27,10 +29,19 @@ const Text = styled.div`
 `
 
 const Loading = () => {
+  let loadingRef = React.useRef(null)
+
+  React.useEffect(() => {
+    gsap.to(loadingRef, 1, {
+      delay: 17,
+      ease: 'power2.Out',
+      opacity: 0,
+    })
+  }, loadingRef)
 
   return (
     <>
-      <Base>
+      <Base ref={(el) => (loadingRef = el)}>
         <Text>
           <Typewriter
             options={{ delay: 15 }}
@@ -53,6 +64,5 @@ const Loading = () => {
     </>
   )
 }
-
 
 export default Loading
