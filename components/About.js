@@ -49,6 +49,11 @@ const AboutBase = styled.div`
     text-align: justify;
   }
 `
+const TitleH2 = styled.h2`
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-text);
+  font-size: 1.8em;
+`
 
 const About = () => {
   return (
@@ -89,7 +94,11 @@ const About = () => {
             </li>
             <li>
               <Link href='https://web.telegram.org/'>
-                <a title='Telegram Web' target='_blank' rel='noopener noreferrer'>
+                <a
+                  title='Telegram Web'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <svg
                     role='img'
                     viewBox='0 0 24 24'
@@ -105,15 +114,18 @@ const About = () => {
           </ul>
         </div>
       </div>
-      <div className='description'>
-        Cupidatat consequat esse commodo est ut duis laboris ut. Consequat ea
-        ullamco ipsum sunt nulla labore. Dolore incididunt sint id est et sit
-        amet veniam exercitation velit aliquip eiusmod nulla. Sit non magna
-        nostrud Lorem ad sunt qui mollit nostrud consectetur eu aute ut aute. Ut
-        nulla eu ullamco aliquip ipsum anim magna tempor occaecat fugiat in
-        officia incididunt. Ad occaecat ex commodo quis id laborum nulla aliqua
-        sint elit. Sint commodo in nulla fugiat culpa sint dolore ullamco
-        reprehenderit.
+      <div>
+        <TitleH2>About</TitleH2>
+        <div className='description'>
+          Cupidatat consequat esse commodo est ut duis laboris ut. Consequat ea
+          ullamco ipsum sunt nulla labore. Dolore incididunt sint id est et sit
+          amet veniam exercitation velit aliquip eiusmod nulla. Sit non magna
+          nostrud Lorem ad sunt qui mollit nostrud consectetur eu aute ut aute.
+          Ut nulla eu ullamco aliquip ipsum anim magna tempor occaecat fugiat in
+          officia incididunt. Ad occaecat ex commodo quis id laborum nulla
+          aliqua sint elit. Sint commodo in nulla fugiat culpa sint dolore
+          ullamco reprehenderit.
+        </div>
       </div>
     </AboutBase>
   )

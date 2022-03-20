@@ -70,15 +70,13 @@ const GalleryBase = styled.div`
   }
 `
 const DescriptionGallery = styled.p`
-  padding: 10px 10px;
+  padding: 10px 0;
   color: var(--primary-text);
   text-align: justify;
 `
 const TitleH2 = styled.h2`
   font-family: 'Montserrat', sans-serif;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--primary-text);
-  text-stroke: 1px var(--primary-text);
+  color: var(--primary-text);
   font-size: 1.8em;
 `
 const List = styled.div`

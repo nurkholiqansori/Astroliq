@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from '../components/Header'
 import Loading from '../components/Loading'
@@ -8,6 +7,7 @@ import { gsap } from 'gsap'
 import Link from 'next/link'
 import Gallery from '../components/Gallery'
 import About from '../components/About'
+import Blog from '../components/Blog'
 
 // THEMES
 const GlobalStyle = createGlobalStyle`
@@ -140,6 +140,7 @@ export default function Home() {
             </DescContent>
           </Description>
           <About />
+          <Blog />
           <Gallery />
           <Footer>
             <Title>Astroliq</Title>
@@ -168,7 +169,7 @@ export default function Home() {
               </i>
               <br />
               <br />
-              &copy;{' '}
+              ASTROLIQ by{' '}
               <Link href='https://www.nurkholiqansori.me'>
                 <a
                   title='Personal web Nur Kholiq Ansori'
