@@ -5,10 +5,20 @@ const BlogBase = styled.div`
   color: var(--primary-text);
   width: 100%;
   height: 100%;
-  padding: 1.2em;
+  background: url('/images/hubble_ngc_3568_potw2150a.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
+  & .blog-wrapper {
+    padding: 1.2em;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
   @media screen and (min-width: 675px) {
-    & {
+    & .blog-wrapper {
       padding: 5em;
     }
   }
@@ -33,7 +43,8 @@ const BlogLists = styled.div`
 `
 const BlogList = styled.div`
   border: 1px solid #fff;
-  filter: drop-shadow(0 0 0.55rem var(--primary-text));
+  box-shadow: 10px 10px 10px -10px #fff, -10px 10px 10px -10px #fff;
+  background: rgba(0, 0, 0, 0.9);
 
   & img {
     width: 100%;
@@ -52,53 +63,55 @@ const BlogDescription = styled.p`
 const Blog = () => {
   return (
     <BlogBase>
-      <TitleH2>Blog</TitleH2>
-      <BlogLists>
-        <BlogList>
-          <img
-            src='/images/pia20844-main.jpg'
-            alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
-          />
-          <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
-          <BlogDescription>
-            The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
-            ...
-          </BlogDescription>
-        </BlogList>
-        <BlogList>
-          <img
-            src='/images/pia20844-main.jpg'
-            alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
-          />
-          <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
-          <BlogDescription>
-            The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
-            ...
-          </BlogDescription>
-        </BlogList>
-        <BlogList>
-          <img
-            src='/images/pia20844-main.jpg'
-            alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
-          />
-          <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
-          <BlogDescription>
-            The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
-            ...
-          </BlogDescription>
-        </BlogList>
-        <BlogList>
-          <img
-            src='/images/pia20844-main.jpg'
-            alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
-          />
-          <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
-          <BlogDescription>
-            The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
-            ...
-          </BlogDescription>
-        </BlogList>
-      </BlogLists>
+      <div className='blog-wrapper'>
+        <TitleH2>Blog</TitleH2>
+        <BlogLists>
+          <BlogList>
+            <img
+              src='/images/pia20844-main.jpg'
+              alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
+            />
+            <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
+            <BlogDescription>
+              The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
+              ...
+            </BlogDescription>
+          </BlogList>
+          <BlogList>
+            <img
+              src='/images/pia20844-main.jpg'
+              alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
+            />
+            <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
+            <BlogDescription>
+              The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
+              ...
+            </BlogDescription>
+          </BlogList>
+          <BlogList>
+            <img
+              src='/images/pia20844-main.jpg'
+              alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
+            />
+            <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
+            <BlogDescription>
+              The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
+              ...
+            </BlogDescription>
+          </BlogList>
+          <BlogList>
+            <img
+              src='/images/pia20844-main.jpg'
+              alt='Curiosity Rover Finds and Examines a Meteorite on Mars'
+            />
+            <BlogTitle>Galaxy Andromeda will going to our galaxy.</BlogTitle>
+            <BlogDescription>
+              The dark, smooth-surfaced rock at the center of this Oct. 30, 2016
+              ...
+            </BlogDescription>
+          </BlogList>
+        </BlogLists>
+      </div>
     </BlogBase>
   )
 }

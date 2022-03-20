@@ -68,7 +68,7 @@ const Description = styled.div`
   width: 100%;
   height: 100vh;
   font-size: 1.5em;
-  background-color: #888;
+  background-color: #000;
   color: var(--primary-text);
   background: url('/images/dario-bronnimann-CpIEyqdwygY-unsplash.jpg');
   background-position: center;
@@ -97,9 +97,23 @@ const Title = styled.h1`
 const Footer = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 2em;
   color: var(--primary-text);
+  background: url('/images/hubble_j2034417_freggs_fullsize_0.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
+  & .footer-wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
   & .copyright {
     font-size: 1.3em;
     text-align: center;
@@ -143,42 +157,44 @@ export default function Home() {
           <Blog />
           <Gallery />
           <Footer>
-            <Title>Astroliq</Title>
-            <div className='copyright'>
-              <i>
-                Image from{' '}
-                <Link href='https://unsplash.com/'>
+            <div className='footer-wrapper'>
+              <Title>Astroliq</Title>
+              <div className='copyright'>
+                <i>
+                  Image from{' '}
+                  <Link href='https://unsplash.com/'>
+                    <a
+                      title='Free Image on Unsplash'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      unsplash
+                    </a>
+                  </Link>
+                  , and{' '}
+                  <Link href='https://www.nasa.gov/mission_pages/msl/images/index.html'>
+                    <a
+                      title='Mars Curiosity Image Gallery | NASA'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      NASA
+                    </a>
+                  </Link>
+                </i>
+                <br />
+                <br />
+                ASTROLIQ by{' '}
+                <Link href='https://www.nurkholiqansori.me'>
                   <a
-                    title='Free Image on Unsplash'
+                    title='Personal web Nur Kholiq Ansori'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    unsplash
+                    Nur Kholiq Ansori
                   </a>
-                </Link>
-                , and{' '}
-                <Link href='https://www.nasa.gov/mission_pages/msl/images/index.html'>
-                  <a
-                    title='Juno Image Gallery | NASA'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    NASA
-                  </a>
-                </Link>
-              </i>
-              <br />
-              <br />
-              ASTROLIQ by{' '}
-              <Link href='https://www.nurkholiqansori.me'>
-                <a
-                  title='Personal web Nur Kholiq Ansori'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Nur Kholiq Ansori
-                </a>
-              </Link>{' '}
+                </Link>{' '}
+              </div>
             </div>
           </Footer>
         </Container>

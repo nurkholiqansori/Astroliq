@@ -83,6 +83,7 @@ const List = styled.div`
   width: 250px;
   height: 500px;
   border: 1px solid #fff;
+  box-shadow: 10px 10px 10px -10px #fff, -10px 10px 10px -10px #fff;
 
   & img {
     width: 100%;
