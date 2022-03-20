@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Coda', cursive;
+    font-size: 14px;
 
     &::-webkit-scrollbar {
       width: 8px;
