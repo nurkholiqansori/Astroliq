@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const AboutBase = styled.div`
   color: var(--primary-text);
@@ -56,8 +58,29 @@ const TitleH2 = styled.h2`
 `
 
 const About = () => {
+  let aboutRef = React.useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
+  React.useEffect(() => {
+    gsap.fromTo(
+      aboutRef,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: aboutRef,
+          start: 'top top',
+          end: 'bottom bottom',
+        },
+      },
+    )
+  }, [])
   return (
-    <AboutBase>
+    <AboutBase ref={(el) => (aboutRef = el)}>
       <div className='image'>
         <img src='/images/ben-sweet-2LowviVHZ-E-unsplash.jpg' />
         <div className='social-media'>

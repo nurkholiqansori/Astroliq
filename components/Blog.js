@@ -1,3 +1,5 @@
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -61,9 +63,31 @@ const BlogDescription = styled.p`
 `
 
 const Blog = () => {
+  let blogRef = React.useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
+  React.useEffect(() => {
+    gsap.fromTo(
+      blogRef,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: blogRef,
+          start: 'top top',
+          end: 'bottom bottom',
+        },
+      },
+    )
+  }, [])
+
   return (
     <BlogBase>
-      <div className='blog-wrapper'>
+      <div className='blog-wrapper' ref={(el) => (blogRef = el)}>
         <TitleH2>Blog</TitleH2>
         <BlogLists>
           <BlogList>

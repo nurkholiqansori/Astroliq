@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import 'react-multi-carousel/lib/styles.css'
 import Carousel from 'react-multi-carousel'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 const dataGallery = [
   {
@@ -117,8 +119,30 @@ const responsive = {
 }
 
 const Gallery = () => {
+  let galleryRef = React.useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
+  React.useEffect(() => {
+    gsap.fromTo(
+      galleryRef,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: galleryRef,
+          start: 'center center',
+          end: 'bottom bottom',
+        },
+      },
+    )
+  }, [])
+
   return (
-    <GalleryBase>
+    <GalleryBase ref={(el) => (galleryRef = el)}>
       <div className='description'>
         <div>
           <TitleH2>Gallery</TitleH2>
@@ -150,7 +174,9 @@ const Gallery = () => {
             </List>
           ))}
         </Carousel>
-        <small><i>Use cursor for swipe</i></small>
+        <small>
+          <i>Use cursor for swipe</i>
+        </small>
       </div>
     </GalleryBase>
   )

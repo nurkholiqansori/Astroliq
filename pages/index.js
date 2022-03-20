@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Gallery from '../components/Gallery'
 import About from '../components/About'
 import Blog from '../components/Blog'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 // THEMES
 const GlobalStyle = createGlobalStyle`
@@ -123,32 +124,72 @@ const Footer = styled.div`
 
 export default function Home() {
   let heroRef = useRef(null)
+  let descriptionRef = useRef(null)
+  let footerRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
 
-  // useEffect(() => {
-  //   gsap.from(heroRef, 3.5, {
-  //     delay: 18,
-  //     ease: 'power3.In',
-  //     y: 64,
-  //     display: 'none',
-  //     opacity: 0,
-  //     stagger: {
-  //       amount: 1,
-  //     },
-  //   })
-  // }, [heroRef])
+  useEffect(() => {
+    gsap.from(heroRef, 3.5, {
+      delay: 18,
+      ease: 'power3.In',
+      y: 64,
+      display: 'none',
+      opacity: 0,
+      stagger: {
+        amount: 1,
+      },
+    })
+  }, [heroRef])
+
+  useEffect(() => {
+    gsap.fromTo(
+      descriptionRef,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: descriptionRef,
+          start: 'top top',
+          end: 'bottom bottom',
+        },
+      },
+    )
+  }, [])
+  useEffect(() => {
+    gsap.fromTo(
+      footerRef,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: footerRef,
+          start: 'center center',
+          end: 'bottom bottom',
+        },
+      },
+    )
+  }, [footerRef])
 
   // DISPLAYING
   return (
     <>
       <Header />
       <Body>
-        {/* <Loading /> */}
+        <Loading />
         <Container ref={(el) => (heroRef = el)}>
           <Hero>
             <Layer1>ASTROLIQ</Layer1>
           </Hero>
           <Description>
-            <DescContent>
+            <DescContent ref={(el) => (descriptionRef = el)}>
               Astroliq is an astronomy themed template. Built with Next.js,
               Styled Components, and GSAP
             </DescContent>
@@ -157,7 +198,7 @@ export default function Home() {
           <Blog />
           <Gallery />
           <Footer>
-            <div className='footer-wrapper'>
+            <div className='footer-wrapper' ref={(el) => (footerRef = el)}>
               <Title>Astroliq</Title>
               <div className='copyright'>
                 <i>
