@@ -83,7 +83,7 @@ const Blog = () => {
         },
       },
     )
-  }, [])
+  }, [blogRef])
 
   return (
     <BlogBase>

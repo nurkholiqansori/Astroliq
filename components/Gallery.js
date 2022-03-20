@@ -139,7 +139,7 @@ const Gallery = () => {
         },
       },
     )
-  }, [])
+  }, [galleryRef])
 
   return (
     <GalleryBase ref={(el) => (galleryRef = el)}>

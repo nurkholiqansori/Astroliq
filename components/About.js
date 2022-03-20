@@ -78,7 +78,7 @@ const About = () => {
         },
       },
     )
-  }, [])
+  }, [aboutRef])
   return (
     <AboutBase ref={(el) => (aboutRef = el)}>
       <div className='image'>

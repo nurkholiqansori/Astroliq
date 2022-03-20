@@ -77,7 +77,7 @@ const Description = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
 `
-const DescContent = styled.div`
+const DescContent = styled.p`
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
@@ -129,24 +129,16 @@ export default function Home() {
   gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
-    gsap.from(heroRef, 3.5, {
+    gsap.to(heroRef, 3.5, {
       delay: 18,
-      ease: 'power3.In',
       y: 64,
-      display: 'none',
-      opacity: 0,
-      stagger: {
-        amount: 1,
-      },
+      display: 'block',
     })
-  }, [heroRef])
-
-  useEffect(() => {
     gsap.fromTo(
       descriptionRef,
       {
         opacity: 0,
-        y: 100,
+        y: 50,
       },
       {
         opacity: 1,
@@ -158,25 +150,23 @@ export default function Home() {
         },
       },
     )
-  }, [])
-  useEffect(() => {
     gsap.fromTo(
       footerRef,
       {
         opacity: 0,
-        y: 100,
+        y: 50,
       },
       {
         opacity: 1,
         y: 0,
         scrollTrigger: {
           trigger: footerRef,
-          start: 'center center',
-          end: 'bottom bottom',
+          start: 'top center',
+          end: 'bottom center',
         },
       },
     )
-  }, [footerRef])
+  }, [heroRef, descriptionRef, footerRef])
 
   // DISPLAYING
   return (
@@ -184,8 +174,8 @@ export default function Home() {
       <Header />
       <Body>
         <Loading />
-        <Container ref={(el) => (heroRef = el)}>
-          <Hero>
+        <Container>
+          <Hero ref={(el) => (heroRef = el)}>
             <Layer1>ASTROLIQ</Layer1>
           </Hero>
           <Description>
@@ -197,8 +187,9 @@ export default function Home() {
           <About />
           <Blog />
           <Gallery />
+          <div ref={(el) => (footerRef = el)}></div>
           <Footer>
-            <div className='footer-wrapper' ref={(el) => (footerRef = el)}>
+            <div className='footer-wrapper'>
               <Title>Astroliq</Title>
               <div className='copyright'>
                 <i>

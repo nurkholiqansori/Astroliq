@@ -6,7 +6,7 @@ import { gsap } from 'gsap'
 
 const Base = styled.div`
   font-family: 'Fira Code', monospace;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: #000;
   color: #fff;
@@ -38,7 +38,7 @@ const Loading = () => {
       opacity: 0,
       display: 'none',
     })
-  }, loadingRef)
+  }, [loadingRef])
 
   return (
     <>
