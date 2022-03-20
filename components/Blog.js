@@ -34,7 +34,7 @@ const TitleH2 = styled.h2`
 const BlogLists = styled.div`
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   padding: 10px 0;
 
   @media screen and (min-width: 675px) {

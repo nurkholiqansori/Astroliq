@@ -16,11 +16,13 @@ const GlobalStyle = createGlobalStyle`
     --primary-text: #fff;
     --primary-bg: #000;
   }
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
   html {
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
     font-family: 'Coda', cursive;
     font-size: 14px;
 
@@ -54,6 +56,9 @@ const Hero = styled.div`
   height: 100vh;
   letter-spacing: 0.5em;
   font-size: clamp(2em, 5vw, 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (min-width: 768) {
     & {
@@ -124,17 +129,12 @@ const Footer = styled.div`
 `
 
 export default function Home() {
-  let heroRef = useRef(null)
   let descriptionRef = useRef(null)
   let footerRef = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
-    gsap.to(heroRef, 3.5, {
-      delay: 18,
-      y: 64,
-      display: 'block',
-    })
+    
     gsap.fromTo(
       descriptionRef,
       {
@@ -167,7 +167,7 @@ export default function Home() {
         },
       },
     )
-  }, [heroRef, descriptionRef, footerRef])
+  }, [descriptionRef, footerRef])
 
   // DISPLAYING
   return (
@@ -176,7 +176,7 @@ export default function Home() {
       <Body>
         <Loading />
         <Container>
-          <Hero ref={(el) => (heroRef = el)}>
+          <Hero>
             <Layer1>ASTROLIQ</Layer1>
           </Hero>
           <Description>

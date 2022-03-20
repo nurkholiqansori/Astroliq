@@ -1,3 +1,5 @@
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -6,9 +8,9 @@ const Layer1Content = styled.div`
   height: 100vh;
   padding: 15px;
   display: flex;
+  y: -64;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--primary-bg);
   pointer-events: none;
@@ -34,10 +36,22 @@ const Heading = styled.h1`
 `
 
 const Layer1 = ({ children }) => {
+  let heroRef = React.useRef(null)
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  React.useEffect(() => {
+    gsap.from(heroRef, 3, {
+      delay: 18,
+      y: 64,
+      display: 'block',
+    })
+  }, [heroRef])
+
   return (
     <>
       <Layer1Content>
-        <Heading>{children}</Heading>
+        <Heading ref={(el) => (heroRef = el)}>{children}</Heading>
       </Layer1Content>
     </>
   )
